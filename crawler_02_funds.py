@@ -2,8 +2,6 @@ import requests
 import bs4
 from bs4 import BeautifulSoup
 
-funds_url = 'http://fund.eastmoney.com/trade/gp.html'
-
 
 def get_urltext(url):
     try:
@@ -75,7 +73,6 @@ def write_to_file(flist):
 def main():
     funds_url = 'http://fund.eastmoney.com/trade/gp.html'
     funds_list = []
-    # print(get_urltext(funds_url))
     html = get_urltext(funds_url)
     fill_funds_list(funds_list, html)
     print_funds_list(funds_list, 20)
